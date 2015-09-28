@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ring Isolation Bot</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <style>
+      body {
+        color: #808080;
+        font-family:Monospace;
+        font-size:13px;
+        text-align:center;
+
+        background-color: #fff;
+        margin: 0px;
+        overflow: hidden;
+      }
+
+      #info {
+        position: absolute;
+        width:100%;
+        top: 0px; 
+        padding: 5px;
+      }
+
+      #extra-info {
+        width: 60%; 
+        margin: 0 auto;
+        visibility: hidden;
+      }
+
+      a {
+
+        color: #0080ff;
+      }
+      h3 {
+        margin: 0;
+        padding: 0;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div id="info">Ring Isolation Bot Demo - <a id="show_info_button" onclick="show_info()" href="#">Info</a><br>
+    <div id="extra-info" > 
+    Kaleidocycles are a fun little mathematical toy made from a chain of special tetrahedrons with certain properties which allows them to rotate freely. This demo allows you to generate all such chains.<br>
+    Change side lengths by updating offsets PA, PB, QC, QD.  <br> Sidelengths are constrained to be positive (PB-PA>0, QD-QC>0).<br>
+    One can update the number of sides/tetrahedrons to any even number greater than 6. <br> </div>
+    </div>
+
+    <script src="three.min.js"></script>
+    <script src="simple2d.js"></script>
+    <script src="ringIsolationRobot.js"></script>
+    <script src="main.js"></script>
+    <script>
+            function show_info(){
+        var extrainfo = document.getElementById('extra-info');
+        var show_info = document.getElementById("show_info_button")
+        if (extrainfo.style.visibility == "visible"){
+          extrainfo.style.visibility = "hidden";
+          show_info.innerHTML = 'Info';
+        }else{
+          extrainfo.style.visibility = "visible"
+          show_info.innerHTML = 'Hide Info';
+        }
+      }
+    </script>
+
+  </body>
+</html>
