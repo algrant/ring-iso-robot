@@ -47,7 +47,7 @@ function init() {
   // create the robot geometry & add it to the scene;
   robot = new ringIsolationRobot();
 
-  robot.init(15, 12, 1, 3);
+  robot.init(8, 8, 1, 3);
 
   robot.inverseKinematics({x:5, y:5}, -Math.PI);
 
@@ -77,11 +77,10 @@ var offset_y = 0;
 
 function animate(){
   requestAnimationFrame( animate );
-  theta += 0.04;
+  theta += 0.02;
   t += 0.02;
-  offset_x += (Math.random()-0.5)*0.01;
-  offset_y += (Math.random()-0.5)*0.01;
-  robot.inverseKinematics({x:15*Math.cos(t)+offset_x, y:10+offset_y}, theta);
+
+  robot.inverseKinematics({x:10*Math.cos(t)+4, y:10}, Math.PI*1.5*Math.cos(theta));
 
   robot.updateGeometry3D();
   //camera.lookAt( robot.ring.position );
